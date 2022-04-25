@@ -22,7 +22,7 @@ Business.create([
 {
   "name": "Extravagant Services",
   "image": "https://isteam.wsimg.com/ip/d2c79dee-7c56-43af-9a3d-438e010bcb99/IMG_20200919_155412.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1160,h:1547",
-  "type": "Car Wash",
+  "type": "car wash",
   "description": "they have the best car washes in the world"
   },
   {
@@ -41,7 +41,7 @@ Business.create([
 
 
 Favorite.create({
-    "business_id": Business.all.sample.id
+    "business_id": Business.all.sample.id,
     "user_id": User.all.sample.id
   })
 

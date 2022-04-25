@@ -3,4 +3,7 @@ class User < ApplicationRecord
 
 	validates_presence_of :username
 	validates_uniqueness_of :username
+
+	has_many :favorites
+    has_many :businesses, through: :favorites
 end

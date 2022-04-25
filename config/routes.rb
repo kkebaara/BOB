@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   resources :users
 
-  root 'sessions#home'
+  resources :sessions, only: [:create]
+
+  # root 'sessions#home'
 
   post "/login", to: "sessions#create"
 
