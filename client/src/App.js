@@ -14,7 +14,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [favorites, setFavorites] = useState("");
+  const [favorite, setFavorite] = useState("");
 
   useEffect(() => {
     fetch("/businesses")
@@ -63,7 +63,10 @@ return (
             <Route
               path="/favorites"
               element={
-                <FavoritesContainer user={user} favorites={favorites} />
+                <FavoritesContainer 
+                setFavorite={favorite}
+                user={user} 
+                 />
               }
             />
           </Routes>
