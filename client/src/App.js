@@ -64,7 +64,8 @@ return (
               path="/favorites"
               element={
                 <FavoritesContainer 
-                setFavorite={favorite}
+                favorite = {favorite}
+                setFavorite={setFavorite}
                 user={user} 
                  />
               }
