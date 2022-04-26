@@ -11,6 +11,10 @@ import Login from "./Login";
 
 function App() {
   const [businesses, setBusinesses] = useState([]);
+  const [user, setUser] = useState(null);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [favorites, setFavorites] = useState("");
 
   useEffect(() => {
     fetch("/businesses")
@@ -20,16 +24,79 @@ function App() {
 
   console.log(businesses);
 
-  return (
-    <div className="App">
-      <NavBar />
-      <Routes>
+/*
+        <Routes>
         <Route path="/" element={<Homepage/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/businesses" element={<BusinessContainer businesses ={businesses} />} />
         <Route path="/favorites" element={<FavoritesContainer />} />
-      </Routes>
-    </div>
+      </Routes>*/
+
+
+
+
+
+return (
+    <>
+      <header className="header-image"></header>
+      <div className="navbar">
+        <span className="app-name">BOB - </span>
+        <span className="header-description">
+          Black Owned Businesses Around You
+        </span>
+      </div>
+
+      <NavBar user={user} setUser={setUser} />
+      <br />
+      <>
+        {user ? (
+          <Routes>
+            <Route exact path="/" element={<Homepage user={user} />} />
+            <Route
+              path="businesses"
+              element={
+                <BusinessContainer
+                  businesses = {businesses}
+                />
+              }
+            />
+            <Route
+              path="/favorites"
+              element={
+                <FavoritesContainer user={user} favorites={favorites} />
+              }
+            />
+          </Routes>
+        ) : (
+          <Routes>
+            <Route
+              path="/signup"
+              element={
+                <SignUp
+                  setUser={setUser}
+                  username={username}
+                  setUsername={setUsername}
+                  password={password}
+                  setPassword={setPassword}
+                />
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <Login
+                  setUser={setUser}
+                  username={username}
+                  setUsername={setUsername}
+                  password={password}
+                  setPassword={setPassword}
+                />
+              }
+            />
+          </Routes>
+        )}
+      </>
+    </>
   );
 }
 

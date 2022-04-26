@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root 'sessions#home'
   
   resources :favorites
 
@@ -7,8 +9,6 @@ Rails.application.routes.draw do
   resources :users
 
   resources :sessions, only: [:create]
-
-  # root 'sessions#home'
 
   post "/login", to: "sessions#create"
 
