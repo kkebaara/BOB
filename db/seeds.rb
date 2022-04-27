@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+puts "🌱 Seeding spices..."
+
+
 User.create!([
   {
     "username": "kenneth",
@@ -44,5 +48,8 @@ Favorite.create({
     "business_id": Business.all.sample.id,
     "user_id": User.all.sample.id
   })
+
+
+puts "✅ Done seeding!"
 
 
