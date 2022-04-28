@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
+//import React, { useState, useEffect } from "react";
 import BusinessCard from "./BusinessCard";
 
 function BusinessContainer({businesses}) {
-  const [businesses, setBusinesses] = useState([]);
+  //const [businesses, setBusinesses] = useState([]);
 
-  useEffect(() => {
+/*  useEffect(() => {
     fetch("http://localhost:3000/businesses")
      .then((r) => r.json())
       .then(setBusinesses);
   }, []);
 
-  console.log(businesses);
+  console.log(businesses);*/
 
   return (
     <div>

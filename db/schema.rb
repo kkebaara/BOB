@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_04_19_115538) do
   create_table "businesses", force: :cascade do |t|
     t.string "image"
     t.string "name"
-    t.string "type"
+    t.string "industry"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

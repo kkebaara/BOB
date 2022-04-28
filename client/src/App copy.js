@@ -15,19 +15,6 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [favorite, setFavorite] = useState("");
-  const [currentUser, setCurrentUser] = useState("");
-
-  useEffect(()=>{
-    fetch("/auth")
-     .then((res) => {
-      if(res.ok) {
-        res.json().then(user => setCurrentUser(user))
-      }
-      })
-   },[])
-
-
-
 
   useEffect(() => {
     fetch("/businesses")
@@ -36,6 +23,18 @@ function App() {
   }, []);
 
   console.log(businesses);
+
+/*
+        <Routes>
+        <Route path="/" element={<Homepage/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/businesses" element={<BusinessContainer businesses ={businesses} />} />
+        <Route path="/favorites" element={<FavoritesContainer />} />
+      </Routes>*/
+
+
+
+
 
 return (
     <>
@@ -73,15 +72,8 @@ return (
             />
           </Routes>
         ) : (
-          <Routes> 
-            <Route
-              path="businesses"
-              element={
-                <BusinessContainer
-                  businesses = {businesses}
-                />
-              }
-            />
+          <Routes>
+          ///---add busienss route here //--//--
             <Route
               path="/signup"
               element={
