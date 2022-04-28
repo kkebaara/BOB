@@ -24,7 +24,7 @@ function App() {
         res.json().then(user => setCurrentUser(user))
       }
       })
-   },[])
+   },[]) 
 
 
 
