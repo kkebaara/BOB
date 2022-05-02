@@ -25,7 +25,7 @@ User.create!([
   }
 ])
 
-20.times do
+50.times do
   Business.create(image: Faker::LoremFlickr.image, name: Faker::Company.name, industry: Faker::Company.industry, description: Faker::Lorem.paragraph) 
 end
 
