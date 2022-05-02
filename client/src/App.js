@@ -27,6 +27,7 @@ function App() {
    },[]) 
 
 
+if (!currentUser) return <Login setCurrentUser={setCurrentUser}/>
 
 
   useEffect(() => {
