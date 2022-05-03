@@ -3,7 +3,7 @@ import BusinessCard from "./BusinessCard";
 function BusinessContainer({businesses}) {
 
   return (
-    <div className="bizcontainer">
+    <div>
       <ul className="cards">
         {businesses.map((business) => (
           <BusinessCard

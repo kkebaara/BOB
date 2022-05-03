@@ -29,12 +29,9 @@ User.create!([
   Business.create(image: Faker::LoremFlickr.image, name: Faker::Company.name, industry: Faker::Company.industry, description: Faker::Lorem.paragraph) 
 end
 
-
-Favorite.create({
-    "business_id": Business.all.sample.id,
-    "user_id": User.all.sample.id
-  })
-
+20.times do 
+  Favorite.create({ "business_id": Business.all.sample.id, "user_id": User.all.sample.id})
+end
 
 
 
