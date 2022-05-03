@@ -1,10 +1,9 @@
-//import React, { useState, useEffect } from "react";
 import BusinessCard from "./BusinessCard";
 
 function BusinessContainer({businesses}) {
 
   return (
-    <div>
+    <div className="bizcontainer">
       <ul className="cards">
         {businesses.map((business) => (
           <BusinessCard
