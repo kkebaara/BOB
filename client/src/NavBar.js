@@ -19,9 +19,6 @@ function NavBar({ user, setUser }) {
           <NavLink className="nav-item" to="/">
             Home
           </NavLink>
-          <NavLink className="nav-item" to="/businesses">
-            Businesses
-          </NavLink>
           <NavLink className="nav-item" to="/favorites">
             Favorites
           </NavLink>
@@ -32,11 +29,17 @@ function NavBar({ user, setUser }) {
         </>
       ) : (
         <>
+          <NavLink className="nav-item" to="/">
+            Home
+          </NavLink>
           <NavLink className="nav-item" to="/signup">
             Signup
           </NavLink>
           <NavLink className="nav-item" to="/login">
             Login
+          </NavLink>
+          <NavLink className="nav-item" to="/businesses">
+            Businesses
           </NavLink>
           <h1>Please Login or Signup</h1>
         </>
