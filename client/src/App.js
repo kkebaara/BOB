@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import BusinessContainer from "./BusinessContainer";
 import NavBar from "./NavBar";
 import Homepage from "./Homepage";
+
 import FavoritesContainer from "./FavoritesContainer";
 
 import SignUp from "./SignUp";
@@ -41,10 +42,10 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<BusinessContainer businesses={businesses} />} />
+        <Route path="/home" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp/>} />
-        <Route path="/businesses" element={<BusinessContainer businesses={businesses} />} />
         <Route path="/favorites" element={<FavoritesContainer/>} />
       </Routes>
     </div>

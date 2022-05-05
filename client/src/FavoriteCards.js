@@ -12,7 +12,7 @@ function FavoriteCards({ getFavorited, favoriteId, setGetFavorited }) {
 
   return (
     <div className="favorite_container">
-      <div className="favorite_cards">
+      <ul className="favorite_cards">
         <img src={getFavorited.image} alt={getFavorited.name} />
         <h3>{getFavorited.name}</h3>
         <h5>{getFavorited.type}</h5>
@@ -20,19 +20,9 @@ function FavoriteCards({ getFavorited, favoriteId, setGetFavorited }) {
         <button onClick={handleDelete} className="emoji-button-delete">
           🗑
         </button>
-      </div>
+      </ul>
     </div>
   );
 }
 
 export default FavoriteCards;
-
-
-
-//       setGetFavorited((getFavorited) => (
-//        getFavorited.filter((e) => {
-//          e.id !== favoriteId;
-//        }
-//     )
-      
-// ))

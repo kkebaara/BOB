@@ -38,10 +38,7 @@ function NavBar({ user, setUser }) {
           <NavLink className="nav-item" to="/login">
             Login
           </NavLink>
-          <NavLink className="nav-item" to="/businesses">
-            Businesses
-          </NavLink>
-          <h1>Please Login or Signup</h1>
+          <h1>This Are The Different Businesses In The Area</h1>
         </>
       )}
     </header>

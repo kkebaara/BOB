@@ -14,10 +14,15 @@ function FavoritesContainer() {
 
 
   return (
-    <div>
+    <div className="FavoritesC">
       <div>
         {getFavorited.map((favorite) => (
-          <FavoriteCards key={favorite.id} getFavorited={favorite.business} favoriteId = {favorite.id} setGetFavorited = {setGetFavorited}/>
+          <FavoriteCards 
+          key={favorite.id} 
+          getFavorited={favorite.business} 
+          favoriteId = {favorite.id} 
+          setGetFavorited = {setGetFavorited}
+          />
         ))}
       </div>
     </div>

@@ -65,3 +65,4 @@ function SignUp({ setUser, username, setUsername, password, setPassword }) {
 }
 
 export default SignUp;
+
