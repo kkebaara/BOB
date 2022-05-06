@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 //import FavoriteCards from "./FavoriteCards";
 
-function BusinessCard({ business }) {
+function BusinessCard({ business, userId}) {
   const [favorited, setFavorited] = useState(true);
 
   function handleFavoriteButtton(e) {
-    e.preventDefault();
+    console.log("THIS IS THIS")
+
     setFavorited(!favorited);
 
     fetch("/favorites", {
@@ -15,6 +16,7 @@ function BusinessCard({ business }) {
         Accept: "application/json",
       },
       body: JSON.stringify({ 
+          user_id: userId,
           business_id: business.id}),
     }).then((r) => r.json());
     console.log(business);
@@ -22,7 +24,7 @@ function BusinessCard({ business }) {
 
   return (
     <div>
-      <div className="card">
+      <div>
         <img src={business.image} alt={business.name} />
         <h3>{business.name}</h3>
         <h5>{business.type}</h5>

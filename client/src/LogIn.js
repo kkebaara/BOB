@@ -1,6 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 
-function Login({ setUser, username, setUsername, password, setPassword }) {
+function Login({ setUser }) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate()
+
+
   function handleSubmit(e) {
     e.preventDefault();
     fetch("/login", {
@@ -11,7 +18,10 @@ function Login({ setUser, username, setUsername, password, setPassword }) {
       body: JSON.stringify({ username, password }),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((user) => {
+          setUser(user)
+          navigate('/favorites')
+        });
       }
     });
   }

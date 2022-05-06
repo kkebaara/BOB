@@ -1,7 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function SignUp({ setUser, username, setUsername, password, setPassword }) {
+function SignUp({ setUser }) {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -17,7 +23,10 @@ function SignUp({ setUser, username, setUsername, password, setPassword }) {
       }),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((user) => { 
+          setUser(user)
+          navigate('/')
+      });
       }
     });
   }

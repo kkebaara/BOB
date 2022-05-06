@@ -14,16 +14,14 @@ import Login from "./Login";
 function App() {
   const [businesses, setBusinesses] = useState([]);
   const [user, setUser] = useState(null);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   const [favorite, setFavorite] = useState("");
-  const [currentUser, setCurrentUser] = useState("");
+  
 
   useEffect(()=>{
     fetch("/auth")
      .then((res) => {
       if(res.ok) {
-        res.json().then(user => setCurrentUser(user))
+        res.json().then(user => setUser(user))
       }
       })
    },[]) 
@@ -39,12 +37,12 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
+      <NavBar user={user} setUser={setUser} />
       <Routes>
-        <Route path="/" element={<BusinessContainer businesses={businesses} />} />
+        <Route path="/" element={<BusinessContainer businesses={businesses} user={user} />} />
         <Route path="/home" element={<Homepage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp/>} />
+        <Route path="/login" element={<Login setUser={setUser}/>} />
+        <Route path="/signup" element={<SignUp setUser={setUser}/>} />
         <Route path="/favorites" element={<FavoritesContainer/>} />
       </Routes>
     </div>

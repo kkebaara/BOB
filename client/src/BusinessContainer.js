@@ -1,6 +1,6 @@
 import BusinessCard from "./BusinessCard";
 
-function BusinessContainer({businesses}) {
+function BusinessContainer({businesses, user}) {
 
   return (
     <div>
@@ -8,6 +8,7 @@ function BusinessContainer({businesses}) {
         {businesses.map((business) => (
           <BusinessCard
             key={business.id}
+            userId={user?.id}
             business={business}
             businesses={businesses}
           />
