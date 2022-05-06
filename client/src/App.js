@@ -17,17 +17,16 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [favorite, setFavorite] = useState("");
-
+  const [currentUser, setCurrentUser] = useState("");
 
   useEffect(()=>{
     fetch("/auth")
-    .then(r=> {
-      if(r.ok){
-        r.json().then(user=>setUser(user))
+     .then((res) => {
+      if(res.ok) {
+        res.json().then(user => setCurrentUser(user))
       }
-    })
-  },[])
-
+      })
+   },[]) 
 
   useEffect(() => {
     fetch("/businesses")
@@ -37,7 +36,6 @@ function App() {
 
   console.log(businesses);
 
- if (!user) return <Login setUser={setUser} />;
 
   return (
     <div className="App">
