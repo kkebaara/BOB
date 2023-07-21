@@ -284,6 +284,9 @@ service:
 ```sh
 brew services start postgresql
 ```
+```sh
+test test
+```
 
 ## Troubleshooting
 
